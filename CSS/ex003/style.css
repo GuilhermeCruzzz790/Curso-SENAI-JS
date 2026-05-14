@@ -1,0 +1,20 @@
+body{
+    background-color: aqua;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: red;
+}
+
+h2 {
+    color: green;
+}
+
+p{
+    color:orange;
+}
+
+a{
+    color: black;
+}

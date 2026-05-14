@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(10, 6, 230);
+}
+
+/* para estilizar IDs utilizamos "#" | Para estilizar classes utilizamos "." */
+
+#titulo-principal {
+    background-color: lime;
+    color: rgb(25, 0, 255);
+    font-size: 40;
+}
+
+#destaque {
+    background-color: yellow;
+}
+
+.modulo {
+   color: rgb(25, 0, 255);
+   background-color: aquamarine; 
+}
+
+.formato {
+    text-align: center;
+    font-size: 40px;
+}
+
+.basico {
+   color: yellow;
+    font-size: 40;
+}
+
+.intermed {
+   color: rgb(255, 0, 0);
+    font-size: 40;
+}
+
+.avançado {
+   color: lime;
+    font-size: 40;
+}
