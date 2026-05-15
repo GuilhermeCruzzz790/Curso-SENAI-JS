@@ -1,1 +1,1 @@
-Pasta com exercícios e testes aplicados durante um curso de JavaScript no SENAI.
+Repositório com exercícios e testes aplicados durante um curso de JavaScript no SENAI.
