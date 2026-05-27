@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        label, #email {
+            display: block;
+        }
+
+        .label-radio {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulários</h1>
+
+    <form method="post"> 
+        
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+        
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade" max="16" required>
+        
+        <label for="notas">Notas:</label>
+        <input type="number" name="idade" id="notas" min="6" step="0.1" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="password" id="senha" required>
+
+        <label for="casado" class="label-radio">Casado:</label>
+        <input type="radio" name="status" id="casado">
+        
+        <label for="solteiro" class="label-radio">Solteiro:</label>
+        <input type="radio" name="status" id="solteiro">
+        
+        <label for="viúvo" class="label-radio">Viúvo:</label>
+        <input type="radio" name="status" id="viúvo">
+        
+        <label for="bike">Bike:</label>
+        <input type="checkbox" name="bike" id="bike">
+        
+        <label for="natacao">Natação:</label>
+        <input type="checkbox" name="bike" id="natacao">
+        
+        <label for="futebol">Futebol:</label>
+        <input type="checkbox" name="bike" id="futebol">
+
+        <button type="submit">Enviar!</button>
+    </form>
+
+    <script>
+
+    </script>
+</body>
+</html>
