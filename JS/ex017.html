@@ -5,57 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulários</title>
     <style>
-        label, #email {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        form {
+            background-color: lightsalmon;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+        
+        label {
             display: block;
+            margin-bottom: 10px;
+        } 
+        
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: none;
+            padding: 5px;
+            box-shadow: 1px 2px 4px 2px rgba(0,0,0,0.5);
+    
         }
 
-        .label-radio {
-            display: inline;
+        .radio, .checkbox {
+            width: 10%;
+            box-shadow: none;
         }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: lightcoral;
+            color: white;
+            margin-top: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(243, 84, 67);
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 2px 1px 5px 0px rgb(240, 109, 57);
+        }
+        
     </style>
 </head>
-<body>
-    <h1>Formulários</h1>
 
-    <form method="post"> 
+<body>
+    
+    <form id="form"> 
+        
+        <h1>Formulários</h1>
         
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" required>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome aqui">
         
         <label for="idade">Idade:</label>
-        <input type="number" name="idade" id="idade" max="16" required>
+        <input type="number" name="idade" id="idade" min="18" placeholder="Digite sua idade aqui">
         
         <label for="notas">Notas:</label>
-        <input type="number" name="idade" id="notas" min="6" step="0.1" required>
+        <input type="number" name="idade" id="notas" min="6" max="10" step="0.1" placeholder="Digite sua nota aqui">
         
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" placeholder="Digite seu email aqui">
 
         <label for="senha">Senha:</label>
-        <input type="password" name="password" id="senha" required>
+        <input type="password" name="password" id="senha" placeholder="Digite sua senha">
 
-        <label for="casado" class="label-radio">Casado:</label>
-        <input type="radio" name="status" id="casado">
+        <label for="">Estado Cívil:</label>
         
-        <label for="solteiro" class="label-radio">Solteiro:</label>
-        <input type="radio" name="status" id="solteiro">
+        <input class="radio" type="radio" name="status" id="casado">Casado
+        <input class="radio" type="radio" name="status" id="solteiro">Solteiro
+        <input class="radio" type="radio" name="status" id="viúvo">Viúvo
         
-        <label for="viúvo" class="label-radio">Viúvo:</label>
-        <input type="radio" name="status" id="viúvo">
+        <label for="">Atividades:</label>
         
-        <label for="bike">Bike:</label>
-        <input type="checkbox" name="bike" id="bike">
-        
-        <label for="natacao">Natação:</label>
-        <input type="checkbox" name="bike" id="natacao">
-        
-        <label for="futebol">Futebol:</label>
-        <input type="checkbox" name="bike" id="futebol">
+        <input class="checkbox" type="checkbox" name="atividades" id="bike">Bike:
+        <input class="checkbox" type="checkbox" name="atividades" id="natacao">Natação:
+        <input class="checkbox" type="checkbox" name="atividades" id="futebol">Futebol:
 
-        <button type="submit">Enviar!</button>
+        <button type="submit" id="botao">Enviar!</button>
+
     </form>
 
     <script>
+        
+        let form = document.getElementById("form")
+        form.addEventListener("submit", function(event) {
+            event.preventDefault() //preventDefault serve para impedir o comportamento padrão!
+            console.log("O usurário enviou os dados!")
+            
+            let nomeUsuario = document.getElementById("nome").value
+            alert(`Olá ${nomeUsuario}, seus dados foram enviados!`)
+        })
+
+        let body = document.querySelector("body")
+        body.addEventListener("keypress", function(event) {
+            if (event.key == "f") {
+                console.log(event)
+                console.log("A tecla F foi pressionada!")
+                body.style.backgroundColor = "green"
+            }
+        })
 
     </script>
 </body>

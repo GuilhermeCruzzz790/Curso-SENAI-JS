@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        form {
+            background-color: rgb(247, 179, 153);
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        } 
+        
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: none;
+            padding: 5px;
+            box-shadow: 1px 2px 4px 2px rgba(0,0,0,0.5);
+        }
+
+        .radio, .checkbox {
+            width: 10%;
+            box-shadow: none;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(235, 177, 130);
+            color: white;
+            margin-top: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(243, 84, 67);
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 2px 1px 5px 0px rgb(240, 109, 57);
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <form id="form"> 
+        
+        <h1>Login</h1>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Digite seu email aqui" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="password" id="senha" placeholder="Digite sua senha" required>
+
+
+        <button type="submit" id="botao">Enviar!</button>
+
+    </form>
+
+    <script>
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+             
+            let userDigitado = document.getElementById("email").value
+            let senhaDigitada = document.getElementById("senha").value
+            
+            const userCorreto = "Guilherme@gmail.com"
+            const senhaCorreta = "12345"
+            
+            if (userDigitado === userCorreto && senhaDigitada === senhaCorreta) {
+                alert("Você se cadastrou com sucesso!")
+            window.location.href = "pagConteudo.html";  
+            } else {
+                alert("Usuário ou senha INCORRETOS!")
+            }
+        }) 
+        
+    </script>
+</body>
+</html>
