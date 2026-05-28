@@ -3,17 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ex 019</title>
 </head>
 <body>
-    <h1>Exercício 10</h1>
+    <h1>Consultar CEP</h1>
 
-    <script>
-        let numero1 = Number(window.prompt("Digite um número: "))
-        let numero2 = Number(window.prompt("Digite um número: "))
+    <input type="text" name="cep" id="cep">
+    <button id="button">Consultar</button>
+    
+    <p id="rua"> </p>
+    <p id="bairro"> </p>
+    <p id="cidade"> </p>
+    <p id="estado"> </p>
 
-        let soma = numero1 + numero2
-        window.alert(`A soma resultante foi: ${soma}!`)
+    <script>   
+        
+        let botao = document.getElementById("button")
+        
+        let rua = document.getElementById("rua")
+        let bairro = document.getElementById("bairro")
+        let cidade = document.getElementById("cidade")
+        let estado = document.getElementById("estado")
+        
+        botao.addEventListener("click", buscarCep)
+        
+        async function buscarCep() {
+            
+            let cepUser = document.getElementById("cep").value
+            let urlAPI = `https://viacep.com.br/ws/${cepUser}/json/`
+            
+            let response = await fetch(urlAPI)
+            
+            let dados = await response.json()
+            
+            console.log(dados)
+            
+            rua.innerHTML = `Rua: ${dados.logradouro}`
+            bairro.innerHTML = `Bairro: ${dados.bairro}`
+            cidade.innerHTML = `Cidade: ${dados.localidade}`
+            estado.innerHTML = `estado: ${dados.estado}`
+
+        }
     </script>
+
 </body>
 </html>

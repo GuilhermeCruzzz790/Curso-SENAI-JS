@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas</title>
+</head>
+<body>
+    <h1>Alertas</h1>
+    
+    
+    
+    <script>
+        // window.alert("Bem Vindo ao site!")
+        // window.confirm("Deseja continuar?")
+        let nome = window.prompt("Digite o seu nome: ")
+        window.alert(`Olá ${nome}, seja bem vindo!`)
+        
+        let escolha = window.confirm("Deseja excluir este item?")
+        console.log("escolha")
+
+        if (escolha == true) {
+            console.log("Excluindo este item...")
+        } else {
+            console.log("Fechar uma tela...")
+        }
+    </script>
+</body>
+</html>
